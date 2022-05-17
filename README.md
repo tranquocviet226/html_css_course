@@ -230,5 +230,49 @@ Examples of semantic elements:```header```, ```<form>```, ```<table>```, and ```
 - ```<time>```
  
  ### 9. CSS Fundamentals
+ CSS stands for Cascading Style Sheets
  
+ ### 10. Inline, Internal and External CSS
+ **10.1. Inline CSS**
+ ```html
+<p style="color: red">The paragraph</p>
+```
   
+  **10.2 Internal CSS**
+```html
+<head>
+ <meta charset="UTF-8" />
+ <title>The Basic Language of the Web: HTML</title>
+ <style>
+  p {
+   color: red;
+  }
+ </style>
+</head>
+
+<body>
+ <p>The paragraph</p>
+</body>
+```
+
+**10.3 External CSS**
+
+index.html
+```html
+<head>
+ <meta charset="UTF-8" />
+ <link href="style.css" rel="stylesheet" />
+ <title>The Basic Language of the Web: HTML</title>
+</head>
+
+<body>
+ <p>The paragraph</p>
+</body>
+```
+
+style.css
+```css
+p {
+ color: red;
+}
+```
