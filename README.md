@@ -12,6 +12,7 @@
   **1.3. Three languages of the Frontend**
   ![image](https://user-images.githubusercontent.com/57559641/168516443-811becbd-ad1e-4c0a-836f-3f3e1ad43f74.png)
 
+## I. HTML Fundamentals
 ### 2. HTML Document structure
 HTML stands for Hyper Text Markup Language
 ```html
@@ -229,6 +230,7 @@ Examples of semantic elements:```header```, ```<form>```, ```<table>```, and ```
 - ```<summary>```
 - ```<time>```
  
+ ## II. CSS Fundamentals
  ### 9. CSS Fundamentals
  CSS stands for Cascading Style Sheets
  
@@ -481,3 +483,197 @@ p {
 |Elements are stacked vertical by default|No line-break after of before the element|No line-break after of before the element|
 |Height and width can be apply|Height and width do not apply|Height and width can be apply|
 |Paddings and margins can be apply |Paddings and margins are applied only horizontally|Paddings and margins can be apply|
+
+### 20. Absolute Positioning
+![Screenshot from 2022-05-17 13-40-42](https://user-images.githubusercontent.com/57559641/168745706-c6716563-ec2c-40c1-96a9-1f7b54a1bbac.png)
+
+```html
+<div class="div-1">
+  <div class="div-2">
+    <button>Click me</button>
+  </div>
+</div>
+```
+```css
+.div-1 {
+  position: relative;
+  background-color: red;
+  width: 400px;
+  height: 200px;
+}
+.div-2 {
+  background-color: green;
+  width: 200px;
+  height: 100px;
+}
+button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+ }
+```
+![Screenshot from 2022-05-17 13-39-11](https://user-images.githubusercontent.com/57559641/168745435-82a80f30-55a6-46e4-ba5f-8d62cf7d8e29.png)
+
+### 21. Pseudo Elements
+index.html
+```html
+<div>DIV</div>
+<p>AAA</p>
+<p>BBB</p>
+<p>CCC</p>
+<h1>Heading</h1>
+```
+```css
+h1::first-letter {
+ color: red;
+}
+
+p::first-line {
+ color: green;
+}
+
+/* This is sibling element get the first p tag right after the div tag */
+div + p::first-letter {
+ color: violet;
+}
+
+h1 {
+ position: relative;
+ background-color: orange;
+}
+
+h1::after {
+ content: "AFTER";
+ color: yellow;
+ position: absolute;
+ top: -10px;
+ right: -20px;
+}
+
+h1::before {
+ content: "BEFORE";
+ color: yellow;
+ position: absolute;
+ top: -10px;
+ left: -20px;
+}
+```
+## III. Layouts Fundamentals
+![Screenshot from 2022-05-17 14-46-15](https://user-images.githubusercontent.com/57559641/168757727-cbee3e81-4279-483f-bdfe-01ad574f5875.png)
+
+### 22. Float Layouts
+```html
+<div class="container clearfix">
+  <img src="img/laura-jones.jpg" alt="Headshot of Laura Jones" height="50" width="50" class="author-img" />
+
+  <p id="author" class="author">
+    Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027
+  </p>
+</div>
+```
+
+```css
+.container {
+  background-color: aqua;
+}
+
+.author-img {
+  float: left;
+}
+
+.author {
+  float: right;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+```
+
+### 23. Simple Float layouts
+![Screenshot from 2022-05-17 15-28-57](https://user-images.githubusercontent.com/57559641/168766556-e2e14462-8505-4b48-99df-593bf083abca.png)
+
+index.html
+```html
+<div class="container">
+  <header>
+    <img src="img/laura-jones.jpg" alt="Headshot of Laura Jones" height="50" width="50" class="author-img" />
+
+    <p id="author" class="author">
+      Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027
+    </p>
+    <div class="clear"></div>
+  </header>
+ 
+  <article>Article</article>
+ 
+  <aside>Aside</aside>
+
+  <footer>Copyright</footer>
+</div>
+```
+
+style.css
+```css
+* {
+ box-sizing: boder-box;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: aqua;
+}
+
+header::after {
+  content: "";
+  clear: both;
+  display: block;
+
+}
+
+.author-img {
+  float: left;
+}
+
+.author {
+  float: right;
+}
+
+article {
+  width: 900px;
+  height: 800px;
+  background-color: violet;
+  float: left;
+}
+
+aside {
+  width: 300px;
+  height: 500px;
+  background-color: green;
+  float: right;
+}
+
+footer {
+  background-color: yellow;
+  clear: both;
+}
+```
+
+### 24. Box-sizing: border-box
+![Screenshot from 2022-05-17 15-41-54](https://user-images.githubusercontent.com/57559641/168769199-40dca23e-777a-4bbc-a008-d784228cfa1d.png)
+- ```box-sizing``` default is ```content-box```
+- ```box-sizing: border-box``` set **element = padding + border + width/height**
+
+```css
+* {
+ box-sizing: border-box;
+}
+```
+
+### 25. Flexbox Layouts
