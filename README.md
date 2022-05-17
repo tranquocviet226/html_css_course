@@ -345,3 +345,71 @@ h1 h2 h3 p {
  
  rgb(255, 255, 255) === #FFFFFF
 
+### 14. Pseudo classes
+index.html
+```html
+<a>This is red</a>
+<a href="#">This is green</a>
+```
+
+```css
+li:first-child {
+ color: red;
+}
+
+li:last-child {
+ color: green;
+}
+
+li:nth-child(2) {
+ color: blue;
+}
+
+a {
+ color: red;
+}
+
+a:link {
+ color: green;
+}
+
+a:visited {
+ color: violet;
+}
+
+a:hover {
+ background-color: green;
+}
+
+a:active {
+ background-color: green;
+}
+```
+
+### 15. CSS Priority
+![image](https://user-images.githubusercontent.com/57559641/168724545-ac562e95-ec4b-44ef-8839-49a18540cc5d.png)
+
+index.html
+```html
+<p id="author" class="text author" style="color: orange">Author VietTQ</p>
+```
+
+style.css
+```css
+#author {
+ color: red;
+}
+
+.author {
+ color: green;
+}
+
+.text {
+ color: yellow;
+}
+
+p {
+ color: violet !important;
+}
+
+```
