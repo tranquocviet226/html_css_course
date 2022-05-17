@@ -413,3 +413,71 @@ p {
 }
 
 ```
+**Last class > First class**
+
+### 16. Universal selector
+```css
+*{
+ color: red;
+}
+
+body {
+ color: green;
+}
+```
+**```*```** applied style for all elements
+
+**```body```** inherited style for children elements
+
+### 17. CSS Box model
+![image](https://user-images.githubusercontent.com/57559641/168726620-1c1a1521-5f1b-4434-83e9-49bceeca341f.png)
+
+```css
+p {
+ margin: 8px;
+ border: 1px solid red;
+ padding: 8px;
+ color: violet;
+ background-color: green;
+}
+```
+
+### 18. Dimentions and Center our page
+```css
+.div-1 {
+ width: 500px;
+ background-color: green;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+.div-2 {
+ width: 500px;
+ background-color: blue;
+ margin: 0 auto;
+}
+```
+### 19. Types of boxes
+**19.1 Block-elements**
+- Elements occupy 100%  of the parent element's width
+- Elements are stacked vertical by default 
+- Example: ```div```, ```body```, ```main```, ```header```, ```footer```, ```section```, ```nav```, ```aside```, ```h1 - h6```, ```p```, ```ul```, ```ol```, ```li```,...
+
+**19.2 Inline-elements**
+ - Occupy only exactly the **space necessary for its content**
+ - **No line-break** after of before the element
+ - **Height** and **width** **do not apply**
+ - **Paddings** and **margins** are applied only **horizontally**
+
+**19.3 Inline-block elements**
+- space necessary for its content
+- No line-break
+- Height and width can be apply
+- Paddings and margins can apply
+
+|Block|Inline|Inline-block|
+|--|--|--|
+|Elements occupy 100%  of the parent element's width|Occupy only exactly the space necessary for its content|Occupy only exactly the space necessary for its content|
+|Elements are stacked vertical by default|No line-break after of before the element|No line-break after of before the element|
+|Height and width can be apply|Height and width do not apply|Height and width can be apply|
+|Paddings and margins can be apply |Paddings and margins are applied only horizontally|Paddings and margins can be apply|
