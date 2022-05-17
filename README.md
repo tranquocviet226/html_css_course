@@ -276,3 +276,72 @@ p {
  color: red;
 }
 ```
+### 11. Styling Text
+p {
+ color: red;
+ font-size: 14px;
+ font-family: sans-serif;
+ font-weight: bold;
+ font-style: italic;
+ text-transform: uppercase;
+ line-height: 1.5;
+ text-align: center;
+}
+
+### 12. Selectors
+index.html 
+```html
+<h1>This is heading 1</h1>
+<h2>This is heading 2</h2>
+<h3>This is heading 3</h3>
+<p id="paragraph-id">This is paragraph ID</p>
+<p class="paragraph-class">This is paragraph Class</p>
+```
+style.css
+
+**12.1. Combining selectors**
+```css
+h1 h2 h3 p {
+ color: red;
+}
+```
+**12.2. ID and Class selectors**
+```css
+#paragraph-id {
+ color: green;
+}
+
+.paragraph-class {
+ color: blue;
+}
+```
+
+**ID name is unique, do not allow repeat ID name**
+
+### 13. CSS Colors
+![image](https://user-images.githubusercontent.com/57559641/168717176-40afc542-2c8c-4f6c-98be-e13ae38a3051.png)
+
+- Every color can be represented  by a combination of **Red**, **Green** and **Blue**
+- Each of 3 base colors can take a value between **0** and **255** with leads to 16.8 million colors
+
+```css
+ h1 {
+  color: red;
+ }
+ 
+ h2 {
+  color: #ff0000;
+ }
+ 
+ h3 {
+  color: rgba(255, 0, 0 ,1);
+ }
+```
+
+- Colors value from **0** - **255**  === **00** - **FF**
+- Example: 
+
+ rgb(0, 0, 0) === #000000
+ 
+ rgb(255, 255, 255) === #FFFFFF
+
