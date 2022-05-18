@@ -677,3 +677,172 @@ footer {
 ```
 
 ### 25. Flexbox Layouts
+![Screenshot from 2022-05-18 10-27-00](https://user-images.githubusercontent.com/57559641/168951153-04e83f67-1dba-4f15-904f-ee044fdfd3cb.png)
+
+
+We have basic layout
+
+index.html
+```html
+<div class="container">
+  <div class="el el--1">Item 1</div>
+  <div class="el el--2">Item 2</div>
+  <div class="el el--3">Item 3</div>
+  <div class="el el--4">Item 4</div>
+  <div class="el el--5">Item 5</div>
+  <div class="el el--6">Item 6</div>
+  <div class="el el--7">Item 7</div>
+  <div class="el el--8">Item 8</div>
+</div>
+```
+style.css
+```css
+.el--1 {
+  background-color: blueviolet;
+}
+
+.el--2 {
+  background-color: orangered;
+}
+
+.el--3 {
+  background-color: green;
+  height: 150px;
+}
+
+.el--4 {
+  background-color: goldenrod;
+}
+
+.el--5 {
+  background-color: palevioletred;
+}
+
+.el--6 {
+  background-color: steelblue;
+}
+
+.el--7 {
+  background-color: yellow;
+}
+
+.el--8 {
+  background-color: crimson;
+}
+```
+![Screenshot from 2022-05-18 08-56-49](https://user-images.githubusercontent.com/57559641/168941369-bd71420f-9fa0-4632-9c75-15b5a39d6edf.png)
+
+**25.1 Flex**
+
+Then, put ```flex``` layout to them
+
+```css
+.container {
+ display: flex;
+ background-color: gray;
+}
+```
+![Screenshot from 2022-05-18 09-04-30](https://user-images.githubusercontent.com/57559641/168942206-83917167-fb32-4443-bcb3-e76a9e446c6b.png)
+
+**25.2 Flex vertical**
+
+And, put ```align-items: center``` to center vertical, besides, we can put ```flex-start```, ```flex-end```, ```stretch```
+```css    
+.container {
+ display: flex;
+ background-color: gray;
+ align-items: center;
+}
+```
+![Screenshot from 2022-05-18 09-11-25](https://user-images.githubusercontent.com/57559641/168942896-0b374a2a-bfd8-4987-b4fc-9842c5df7282.png)
+
+**25.3 Flex horizontal**
+
+Put ```justify-content: center``` to center horizontal, besides ```flex-start```, ```flex-end```, ```space-between```, ```space-around```
+```css
+.container {
+ display: flex;
+ background-color: gray;
+ justify-content: center;
+}
+```
+![Screenshot from 2022-05-18 09-20-54](https://user-images.githubusercontent.com/57559641/168944007-a1ba1c57-b648-4d5c-bab0-464f4df4a6ff.png)
+
+**25.4 Flex Item**
+
+**```align-self```** : ```center```, ```flex-start```, ```flex-end```, ```stretch```
+```css
+.el--1 {
+  align-self: flex-start;
+}
+.el--2 {
+  align-self: flex-end;
+}
+```
+![Screenshot from 2022-05-18 10-37-43](https://user-images.githubusercontent.com/57559641/168952243-8d5626c3-d0ca-4b3d-81f6-f43accf99588.png)
+
+
+**25.5 Order items**
+
+Default order is **0**, we can specify ```order``` to sort items
+
+```css
+.el--1 {
+  align-self: flex-start;
+  order: 5;
+}
+.el--2 {
+  align-self: flex-end;
+  order: 4;
+}
+.el--3 {
+  order: 3;
+}
+.el--4 {
+  order: 2;
+}
+.el--5 {
+  align-self: stretch;
+  order: 1;
+}
+.el--6 {
+  order: 0;
+}
+```
+![Screenshot from 2022-05-18 10-46-48](https://user-images.githubusercontent.com/57559641/168953124-3e5bd841-cc73-48d8-b0c1-4812da9ac3ac.png)
+
+**25.6 Space between each item**
+
+We can use **```gap```** property
+
+```css
+.container {
+  gap: 30px;
+}
+```
+![Screenshot from 2022-05-18 11-00-28](https://user-images.githubusercontent.com/57559641/168954526-4bbdb43c-4d6b-48c3-87a8-288c9a6378b7.png)
+
+**25.7 Flex property**
+
+Default flex item
+```css
+.el {
+ flex-grow: 0;
+ flex-shrink: 1;
+ flex-basis: auto;
+}
+```
+
+**```flex-basics```** to set item width = 100px, when content is large than 100px then the elements extends to fit that content.
+
+```css
+.el--1 {
+  background-color: blueviolet;
+  white-space: nowrap;
+}
+    
+.el {
+  flex-basis: 100px;
+}
+```
+![IMG](https://user-images.githubusercontent.com/57559641/168958556-eaab9f5a-665e-4d1c-9419-e6a0184d9d30.png)
