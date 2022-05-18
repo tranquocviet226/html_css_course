@@ -830,6 +830,9 @@ Default flex item
  flex-grow: 0;
  flex-shrink: 1;
  flex-basis: auto;
+ 
+ /* The same */
+ flex: 0 1 auto;
 }
 ```
 
@@ -846,3 +849,91 @@ Default flex item
 }
 ```
 ![IMG](https://user-images.githubusercontent.com/57559641/168958556-eaab9f5a-665e-4d1c-9419-e6a0184d9d30.png)
+
+**```flex-shrink```** default is **1** mean if items > content then items can resize < 100px, if set to **0** items alway >=100px
+
+```css
+.el {
+   flex-basis: 100px;
+   flex-shrink: 0;
+}
+```
+![Screenshot from 2022-05-18 14-11-47](https://user-images.githubusercontent.com/57559641/168979203-36e8687e-e189-4698-a478-c6ea71c99c91.png)
+
+**```flex-grow```** default **0**, set to **1** will fit items with the same content size
+```css
+.el {
+ flex-shrink: 0;
+ flex-grow: 1;
+}
+```
+![Screenshot from 2022-05-18 14-16-19](https://user-images.githubusercontent.com/57559641/168979953-1bbc7f29-6001-498d-a8d7-1ed8ec3e8221.png)
+
+### 26. Grid Layouts
+![Screenshot from 2022-05-18 14-49-35](https://user-images.githubusercontent.com/57559641/168986372-697fb032-e7e9-44fc-8b89-23f5fea559a4.png)
+
+index.html
+```html
+<div class="container">
+  <div class="el el--1">Item 1</div>
+  <div class="el el--2">Item 2</div>
+  <div class="el el--3">Item 3</div>
+  <div class="el el--4">Item 4</div>
+  <div class="el el--5">Item 5</div>
+  <div class="el el--6">Item 6</div>
+  <div class="el el--7">Item 7</div>
+  <div class="el el--8">Item 8</div>
+</div>
+```
+
+style.css
+```css
+.container {
+  background-color: lightgray;
+  display: grid;
+  grid-template-columns: 100px 200px;
+}
+
+.el--1 {
+  background-color: red;
+}
+
+.el--2 {
+  background-color: green;
+}
+
+.el--3 {
+  background-color: blue;
+}
+
+.el--4 {
+  background-color: violet;
+}
+
+.el--5 {
+  background-color: yellow;
+}
+
+.el--6 {
+  background-color: orange;
+}
+
+.el--7 {
+  background-color: teal;
+}
+
+.el--8 {
+  background-color: cyan;
+}
+```
+![Screenshot from 2022-05-18 14-53-51](https://user-images.githubusercontent.com/57559641/168987203-5dea468b-1b6b-45aa-9280-ec3b8eb7ba4f.png)
+
+Another Grid
+```css
+.container {
+   ...
+   grid-template-columns: 100px 200px 100px 200px;
+}
+```
+![Screenshot from 2022-05-18 15-03-29](https://user-images.githubusercontent.com/57559641/168989060-970bcbc0-601c-4c96-8936-1c9d698c8cf0.png)
+
