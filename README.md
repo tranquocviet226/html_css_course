@@ -926,6 +926,9 @@ style.css
   background-color: cyan;
 }
 ```
+
+**26.1 ```grid-template-columns```**
+
 ![Screenshot from 2022-05-18 14-53-51](https://user-images.githubusercontent.com/57559641/168987203-5dea468b-1b6b-45aa-9280-ec3b8eb7ba4f.png)
 
 Another Grid
@@ -937,3 +940,25 @@ Another Grid
 ```
 ![Screenshot from 2022-05-18 15-03-29](https://user-images.githubusercontent.com/57559641/168989060-970bcbc0-601c-4c96-8936-1c9d698c8cf0.png)
 
+**26.1 ```grid-template-rows```**
+
+```css
+.container {
+  background-color: lightgray;
+  display: grid;
+  grid-template-columns: 100px 200px;
+  grid-template-rows: 100px 200px;
+}
+```
+![Screenshot from 2022-05-18 17-09-27](https://user-images.githubusercontent.com/57559641/169015212-16937bc1-3e65-4904-8020-7a0f80ebbe28.png)
+
+**26.1 Gap property**
+
+```css
+.container {
+ ...
+ column-gap: 10px;
+ row-gap: 20px;
+}
+```
+![Screenshot from 2022-05-18 17-11-03](https://user-images.githubusercontent.com/57559641/169015564-2d82ecfb-d0b9-4fb7-a2e1-ae965138da44.png)
