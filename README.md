@@ -871,6 +871,7 @@ Default flex item
 
 ### 26. Grid Layouts
 ![Screenshot from 2022-05-18 14-49-35](https://user-images.githubusercontent.com/57559641/168986372-697fb032-e7e9-44fc-8b89-23f5fea559a4.png)
+![Screenshot from 2022-05-19 11-10-08](https://user-images.githubusercontent.com/57559641/169202548-8dec4fd3-e638-4054-9a62-fd430c61119f.png)
 
 index.html
 ```html
@@ -952,7 +953,7 @@ Another Grid
 ```
 ![Screenshot from 2022-05-18 17-09-27](https://user-images.githubusercontent.com/57559641/169015212-16937bc1-3e65-4904-8020-7a0f80ebbe28.png)
 
-**26.1 Gap property**
+**26.2 Gap property**
 
 ```css
 .container {
@@ -962,3 +963,115 @@ Another Grid
 }
 ```
 ![Screenshot from 2022-05-18 17-11-03](https://user-images.githubusercontent.com/57559641/169015564-2d82ecfb-d0b9-4fb7-a2e1-ae965138da44.png)
+
+**26.3 FR unit**
+
+We can use ```fr``` unit for flexable elements
+```css
+.container {
+  background-color: lightgray;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr;
+  grid-template-rows: 100px 200px;
+  column-gap: 10px;
+  row-gap: 20px;
+}
+```
+![Screenshot from 2022-05-19 11-23-02](https://user-images.githubusercontent.com/57559641/169203863-37a9a416-7a4a-4134-bdcd-2a8aa24f36b8.png)
+
+```css
+.container {
+  background-color: lightgray;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 20px;
+}
+
+.el--1 {
+  background-color: red;
+  height: 100px;
+}
+```
+![Screenshot from 2022-05-19 11-32-35](https://user-images.githubusercontent.com/57559641/169205576-289901a5-31bd-4e06-a97a-36dbacef76f8.png)
+
+We can use ```auto``` for fill fit content needed
+```css
+.container {
+   grid-template-rows: 1fr auto;
+}
+```
+
+Move item with rows and columns
+```css
+.el--1 {
+  background-color: red;
+  grid-column: 1/2;
+  grid-row: 2/3;
+
+}
+
+.el--8 {
+  background-color: cyan;
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+```
+![Screenshot from 2022-05-19 13-36-19](https://user-images.githubusercontent.com/57559641/169226265-c7becf0e-122b-45c6-bd00-293afe3ed70e.png)
+
+**26.4 Aligning Grid items and Tracks**
+
+**Horizontal** center use ```justify-content: center```, ```space-around```, ```space-between```, ``start```, ```end```,...
+
+```css
+.container {
+  background-color: lightgray;
+  display: grid;
+  grid-template-columns: 100px 200px 100px 200px;
+  grid-template-rows: 100px 200px;
+  column-gap: 10px;
+  row-gap: 20px;
+  justify-content: center;
+}
+```
+
+![Screenshot from 2022-05-19 14-04-18](https://user-images.githubusercontent.com/57559641/169230945-01c62056-1cb3-4c7e-a835-1db7b241c1bf.png)
+
+**Vertical** center use ```align-content: center```, ```space-around```, ```space-between```, ```start```, ```end```,...
+
+```css
+.container {
+  background-color: lightgray;
+  display: grid;
+  grid-template-columns: 100px 200px 100px 200px;
+  grid-template-rows: 100px 200px;
+  column-gap: 10px;
+  row-gap: 20px;
+  height: 600px;
+  align-content: center;
+}
+```
+![Screenshot from 2022-05-19 14-08-22](https://user-images.githubusercontent.com/57559641/169231658-ddda1137-20da-47b8-9ecd-859e426d18b8.png)
+
+**Center Items** use ```align-items``` and ```justify-items```
+```css
+.container {
+  background-color: lightgray;
+  display: grid;
+  grid-template-columns: 100px 200px 100px 200px;
+  grid-template-rows: 100px 200px;
+  column-gap: 10px;
+  row-gap: 20px;
+  height: 400px;
+  
+  /* Center content*/
+  justify-content: center;
+  align-content: center;
+
+  /* Center items inside content*/
+  align-items: center;
+  justify-items: center;
+}
+```
+![Screenshot from 2022-05-19 14-17-38](https://user-images.githubusercontent.com/57559641/169233773-b6bb0c7c-d868-4ab3-ac01-94d0a2938aeb.png)
